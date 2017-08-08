@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveSceneTutorial : MonoBehaviour {
 
@@ -12,5 +13,10 @@ public class MoveSceneTutorial : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+
+	}
+
+	void SceneManegment(){
+		SceneManager.LoadScene ("Tutorial");
 	}
 }
