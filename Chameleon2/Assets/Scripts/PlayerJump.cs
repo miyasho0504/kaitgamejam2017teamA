@@ -11,9 +11,15 @@ public class PlayerJump : MonoBehaviour {
     bool first_jump = false;//1回目のジャンプ中か
     bool second_jump=false;
 
+    AudioSource _audio;
+
+    public AudioClip se_jump1;
+    public AudioClip se_jump2;
+    public AudioClip se_landing;
+
 	// Use this for initialization
 	void Start () {
-		
+        _audio = this.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +30,7 @@ public class PlayerJump : MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().velocity.x, jump_power, 0);
+                _audio.PlayOneShot(se_jump1);
             }
             
             //マウスの左クリックが押し続けられているときの処理
@@ -42,6 +49,7 @@ public class PlayerJump : MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().velocity.x, jump_power, 0);
+                _audio.PlayOneShot(se_jump2);
             }
             //マウスの左クリックが押し続けられているときの処理
             if (Input.GetMouseButton(0))
@@ -61,6 +69,7 @@ public class PlayerJump : MonoBehaviour {
         if(collision.gameObject.tag=="Stage1"||collision.gameObject.tag=="Stage2"){
             first_jump = false;
             second_jump = false;
+            _audio.PlayOneShot(se_landing);
         }
     }
 }
