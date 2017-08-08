@@ -12,20 +12,18 @@ public class MoveScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-
 	}
 
-	public void SceneManagmentTutorial(){
-		SceneManager.LoadScene ("Tutorial");
+	static public void SceneManagmentTutorial(){
+		SceneManager.LoadScene("Tutorial");
 	}
-	public void SceneManagmentMain(){
-		SceneManager.LoadScene ("Main");
+	static public void SceneManagmentMain(){
+		SceneManager.LoadScene("Main");
 	}
-	public void SceneManagmentResult(){
-		SceneManager.LoadScene ("Result");
+	static public void SceneManagmentResult(){
+		SceneManager.LoadScene("Result");
 	}
-	public void SceneManagmentTitle(){
-		SceneManager.LoadScene ("Title");
+	static public void SceneManagmentTitle(){
+		SceneManager.LoadScene("Title");
 	}
 }

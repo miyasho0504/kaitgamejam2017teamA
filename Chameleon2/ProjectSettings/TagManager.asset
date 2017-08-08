@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Stage
+  - Restart
+  - Stage1
+  - Stage2
   layers:
   - Default
   - TransparentFX
