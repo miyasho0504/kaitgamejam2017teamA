@@ -23,7 +23,7 @@ public class MoveScene : MonoBehaviour {
 	static public void SceneManagmentResult(){
 		SceneManager.LoadScene("Result");
 	}
-	static public void SceneManagmentTitle(){
+	public void SceneManagmentTitle(){
 		SceneManager.LoadScene("Title");
 	}
 }
