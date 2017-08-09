@@ -28,6 +28,7 @@ public class PlayerColorChange2 : MonoBehaviour {
         {
             _audio.PlayOneShot(se_color_change);
             player_color=player_color * (-1);
+            PlayerAnimation.playAnim_ColorChange();
         }
         if (player_color == 1)
         {
