@@ -6,6 +6,8 @@ public class PlayerRestart2 : MonoBehaviour {
 
     public GameObject RestartPosition;
 
+    public GameObject player_renderer_core;
+
     public GameObject _failed_se_audio;
     AudioSource _audio;
 
@@ -32,6 +34,11 @@ public class PlayerRestart2 : MonoBehaviour {
                 {
                     bomb_played = true;
                     _audio.PlayOneShot(se_bomb);
+                    foreach (Transform child in player_renderer_core.transform)
+                    {
+                        GameObject gameObject = child.gameObject;
+                        gameObject.GetComponent<Renderer>().enabled = false;
+                    }
                 }
                 else if (warp_played == false)
                 {
@@ -39,6 +46,11 @@ public class PlayerRestart2 : MonoBehaviour {
                     _audio.PlayOneShot(se_warp);
                     this.gameObject.transform.position = RestartPosition.transform.position;
                     PlayerColorChange2.player_color = 1;
+                    foreach (Transform child in player_renderer_core.transform)
+                    {
+                        GameObject gameObject = child.gameObject;
+                        gameObject.GetComponent<Renderer>().enabled = true;
+                    }
                     player_failed = false;
                     bomb_played = false;
                     warp_played = false;
