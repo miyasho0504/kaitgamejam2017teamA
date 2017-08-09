@@ -34,12 +34,12 @@ public class PlayerJump : MonoBehaviour {
             }
             
             //マウスの左クリックが押し続けられているときの処理
-            if (Input.GetMouseButton(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
+            if (Input.GetMouseButton(0) == true || Input.GetKey(KeyCode.Space) == true)
             {
                 Physics.gravity = new Vector3(0,jump_continue_gravity,0);
             }
             //マウスの左クリックが離されたときの処理
-            if (Input.GetMouseButtonUp(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
+            if (Input.GetMouseButtonUp(0) == true || Input.GetKeyUp(KeyCode.Space) == true)
             {
                 Physics.gravity = new Vector3(0,original_gravity, 0);
                 first_jump = true;
@@ -54,12 +54,12 @@ public class PlayerJump : MonoBehaviour {
                 _audio.PlayOneShot(se_jump2);
             }
             //マウスの左クリックが押し続けられているときの処理
-            if (Input.GetMouseButton(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
+            if (Input.GetMouseButton(0) == true || Input.GetKey(KeyCode.Space) == true)
             {
                 Physics.gravity = new Vector3(0, jump_continue_gravity, 0);
             }
             //マウスの左クリックが離されたときの処理
-            if (Input.GetMouseButtonUp(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
+            if (Input.GetMouseButtonUp(0) == true || Input.GetKeyUp(KeyCode.Space) == true)
             {
                 Physics.gravity = new Vector3(0, original_gravity, 0);
                 second_jump = true;
