@@ -1167,6 +1167,7 @@ MonoBehaviour:
   stage2_material: {fileID: 2100000, guid: 798dd0b0765ded74fb7589a339d09504, type: 2}
   se_color_change: {fileID: 8300000, guid: 185692e84b20b814785b662c26a3cae3, type: 3}
   character_model: {fileID: 1161965273}
+  player: {fileID: 661612632}
 --- !u!82 &1161965276
 AudioSource:
   m_ObjectHideFlags: 0
