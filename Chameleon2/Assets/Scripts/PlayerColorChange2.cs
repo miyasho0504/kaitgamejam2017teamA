@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerColorChange : MonoBehaviour {
+public class PlayerColorChange2 : MonoBehaviour {
 
     static public int player_color;//プレイヤーの今の色(1=stage1と同じ色,-1=stage2と同じ色)
 
@@ -13,10 +13,11 @@ public class PlayerColorChange : MonoBehaviour {
 
     public AudioClip se_color_change;
 
+    public GameObject character_model;
+
 	// Use this for initialization
 	void Start () {
         player_color = 1;
-        this.gameObject.GetComponent<Renderer>().material = stage1_material;
         _audio = this.GetComponent<AudioSource>();
 	}
 	
@@ -30,11 +31,17 @@ public class PlayerColorChange : MonoBehaviour {
         }
         if (player_color == 1)
         {
-            this.gameObject.GetComponent<Renderer>().material = stage1_material;
+            foreach (Transform child in transform)
+            {
+                child.gameObject.GetComponent<Renderer>().material = stage1_material;
+            }
         }
         if (player_color == -1)
         {
-            this.gameObject.GetComponent<Renderer>().material = stage2_material;
+            foreach (Transform child in transform)
+            {
+                child.gameObject.GetComponent<Renderer>().material = stage2_material;
+            }
         }
 	}
 }
