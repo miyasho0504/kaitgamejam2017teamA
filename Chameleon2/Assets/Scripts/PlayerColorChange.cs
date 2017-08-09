@@ -18,7 +18,8 @@ public class PlayerColorChange : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //マウスが右クリックされたら
-		if(Input.GetMouseButtonDown(1)){
+        if (Input.GetMouseButtonDown(1) == true || Input.GetKeyDown(KeyCode.Z) == true || Input.GetKeyDown(KeyCode.Return) == true)
+        {
             player_color=player_color * (-1);
         }
         if (player_color == 1)

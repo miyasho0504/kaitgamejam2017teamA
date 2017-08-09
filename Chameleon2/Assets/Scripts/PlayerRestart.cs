@@ -19,7 +19,7 @@ public class PlayerRestart : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         //落ちたら(リスタートパネルに触れたら)
-        if (collision.gameObject.tag == "Restart")
+        if (collision.gameObject.tag == "Restart" || collision.gameObject.tag == "Stage0")
         {
             this.gameObject.transform.position = RestartPosition.transform.position;
             PlayerColorChange.player_color =1;

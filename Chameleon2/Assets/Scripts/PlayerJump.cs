@@ -27,18 +27,20 @@ public class PlayerJump : MonoBehaviour {
         if (first_jump == false)
         {
             //マウスの左クリックがされたときの処理
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0)==true||Input.GetKeyDown(KeyCode.Space)==true)
             {
                 this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().velocity.x, jump_power, 0);
                 _audio.PlayOneShot(se_jump1);
             }
             
             //マウスの左クリックが押し続けられているときの処理
-            if(Input.GetMouseButton(0)){
+            if (Input.GetMouseButton(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
+            {
                 Physics.gravity = new Vector3(0,jump_continue_gravity,0);
             }
             //マウスの左クリックが離されたときの処理
-            if(Input.GetMouseButtonUp(0)){
+            if (Input.GetMouseButtonUp(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
+            {
                 Physics.gravity = new Vector3(0,original_gravity, 0);
                 first_jump = true;
             }
@@ -46,18 +48,18 @@ public class PlayerJump : MonoBehaviour {
         else if (second_jump == false)
         {
             //マウスの左クリックがされたときの処理
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
             {
                 this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().velocity.x, jump_power, 0);
                 _audio.PlayOneShot(se_jump2);
             }
             //マウスの左クリックが押し続けられているときの処理
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
             {
                 Physics.gravity = new Vector3(0, jump_continue_gravity, 0);
             }
             //マウスの左クリックが離されたときの処理
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
             {
                 Physics.gravity = new Vector3(0, original_gravity, 0);
                 second_jump = true;
