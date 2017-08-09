@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour {
 
-    static Animator _animator;
+    Animator _animator;
     CharacterController _characon;
 
 	// Use this for initialization
@@ -18,7 +18,7 @@ public class PlayerAnimation : MonoBehaviour {
 		
 	}
 
-    static public void playAnim_ColorChange()
+    public void playAnim_ColorChange()
     {
         _animator.SetTrigger("ColorChange");
     }

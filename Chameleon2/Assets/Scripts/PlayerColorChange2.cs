@@ -15,10 +15,14 @@ public class PlayerColorChange2 : MonoBehaviour {
 
     public GameObject character_model;
 
+    public GameObject player;
+    PlayerAnimation player_animation;
+
 	// Use this for initialization
 	void Start () {
         player_color = 1;
         _audio = this.GetComponent<AudioSource>();
+        player_animation = player.GetComponent<PlayerAnimation>();
 	}
 	
 	// Update is called once per frame
@@ -28,7 +32,7 @@ public class PlayerColorChange2 : MonoBehaviour {
         {
             _audio.PlayOneShot(se_color_change);
             player_color=player_color * (-1);
-            PlayerAnimation.playAnim_ColorChange();
+            player_animation.playAnim_ColorChange();
         }
         if (player_color == 1)
         {
