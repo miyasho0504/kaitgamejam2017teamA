@@ -19,6 +19,8 @@ public class PlayerRestart2 : MonoBehaviour {
 
     public static bool player_failed = false;
 
+    
+
 	// Use this for initialization
 	void Start () {
 		_audio=_failed_se_audio.GetComponent<AudioSource>();

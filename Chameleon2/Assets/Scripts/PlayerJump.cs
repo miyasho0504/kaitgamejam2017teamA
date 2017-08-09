@@ -17,6 +17,11 @@ public class PlayerJump : MonoBehaviour {
     public AudioClip se_jump2;
     public AudioClip se_landing;
 
+    public GameObject _particle_tyakuti;
+    public GameObject _particle_iwa_small;
+    public GameObject _particle_iwa;
+    public GameObject _particle_create_position;
+
 	// Use this for initialization
 	void Start () {
         _audio = this.GetComponent<AudioSource>();
@@ -69,9 +74,24 @@ public class PlayerJump : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag=="Stage1"||collision.gameObject.tag=="Stage2"){
+            _audio.PlayOneShot(se_landing);
+            GameObject _particle_object =Instantiate(_particle_tyakuti,_particle_create_position.transform);
+            ParticleSystem _particle = _particle_object.GetComponent<ParticleSystem>();
+            _particle.Play();
+
+            if(first_jump==true&&second_jump==true){
+                GameObject _particle_object2 = Instantiate(_particle_iwa, _particle_create_position.transform);
+                ParticleSystem _particle2 = _particle_object.GetComponent<ParticleSystem>();
+                _particle2.Play();
+            }else if (first_jump == true && second_jump == false)
+            {
+                GameObject _particle_object3 = Instantiate(_particle_iwa_small, _particle_create_position.transform);
+                ParticleSystem _particle3 = _particle_object.GetComponent<ParticleSystem>();
+                _particle3.Play();
+            }
+
             first_jump = false;
             second_jump = false;
-            _audio.PlayOneShot(se_landing);
         }
     }
 }
