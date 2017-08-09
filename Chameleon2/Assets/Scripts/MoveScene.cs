@@ -26,4 +26,7 @@ public class MoveScene : MonoBehaviour {
 	public void SceneManagmentTitle(){
 		SceneManager.LoadScene("Title");
 	}
+	public void SceneManagementSelect(){
+		SceneManager.LoadScene ("Select");
+	}
 }
