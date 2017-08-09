@@ -14,10 +14,10 @@ public class MoveScene : MonoBehaviour {
 	void Update () {
 	}
 
-	static public void SceneManagmentTutorial(){
+	public void SceneManagmentTutorial(){
 		SceneManager.LoadScene("Tutorial");
 	}
-	static public void SceneManagmentMain(){
+	public void SceneManagmentMain(){
 		SceneManager.LoadScene("Main");
 	}
 	static public void SceneManagmentResult(){
