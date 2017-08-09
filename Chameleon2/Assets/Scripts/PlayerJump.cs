@@ -8,8 +8,8 @@ public class PlayerJump : MonoBehaviour {
     public float jump_continue_gravity;//マウスの左ボタンを押し続けているときのジャンプ力
     public float original_gravity;
 
-    bool first_jump = false;//1回目のジャンプ中か
-    bool second_jump=false;
+    static public bool first_jump = false;//1回目のジャンプ中か
+    static public bool second_jump=false;
 
     AudioSource _audio;
 
