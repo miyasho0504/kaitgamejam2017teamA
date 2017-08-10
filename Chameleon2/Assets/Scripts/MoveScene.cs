@@ -32,4 +32,13 @@ public class MoveScene : MonoBehaviour {
 	public void SceneManagmentStageSa(){
 		SceneManager.LoadScene ("StageSa");
 	}
+	public void SceneManagmentStageTu(){
+		SceneManager.LoadScene ("StageTu");
+	}
+	public void SceneManagmentStageKu(){
+		SceneManager.LoadScene ("StageKu");
+	}
+	public void SceneManagmentStageO(){
+		SceneManager.LoadScene ("StageO");
+	}
 }

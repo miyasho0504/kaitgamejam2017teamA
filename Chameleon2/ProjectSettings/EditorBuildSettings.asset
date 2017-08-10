@@ -15,11 +15,20 @@ EditorBuildSettings:
     path: Assets/Scene/Tutorial.unity
     guid: 91a4e9f8894c3bc428c48fbfd4b1bf9e
   - enabled: 1
-    path: Assets/Scene/Main.unity
+    path: Assets/Scene/StageMi.unity
     guid: 3cda4848f760fcf4da18d418c9d422d4
+  - enabled: 1
+    path: Assets/Scene/StageSa.unity
+    guid: e43f7c674dc6ce243b2f9accd6562fb8
+  - enabled: 1
+    path: Assets/Scene/StageTu.unity
+    guid: 25fa89372bbca6f418219e29c6b153d3
+  - enabled: 1
+    path: Assets/Scene/StageKu.unity
+    guid: 1bd492a0d8feacd4399d2039965e048e
+  - enabled: 1
+    path: Assets/Scene/StageO.unity
+    guid: 38508dd4865802740b4b075bc91b7f10
   - enabled: 1
     path: Assets/Scene/Result.unity
     guid: dfa7b9293a21b3d439e6fb431d917100
-  - enabled: 1
-    path: Assets/Scene/StageSa.unity
-    guid: 00000000000000000000000000000000
