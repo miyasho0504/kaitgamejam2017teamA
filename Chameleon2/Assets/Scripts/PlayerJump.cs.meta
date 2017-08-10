@@ -1,10 +1,20 @@
 fileFormatVersion: 2
 guid: c595201d2d3a99f41af895b3d792dbca
-timeCreated: 1502167847
+timeCreated: 1502327942
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - se_jump1: {fileID: 8300000, guid: 70c79a9e5a9252a489d545d0c5d2a225, type: 3}
+  - se_jump2: {fileID: 8300000, guid: b3496ab09f590eb499116bef33007506, type: 3}
+  - se_landing: {fileID: 8300000, guid: 9e227505ef6219f49b52802c0e73effa, type: 3}
+  - _particle_tyakuti: {instanceID: 0}
+  - _particle_iwa_small: {instanceID: 0}
+  - _particle_iwa: {instanceID: 0}
+  - _particle_create_position: {instanceID: 0}
+  - _prefab_sonicboom: {instanceID: 0}
+  - stage_color1: {fileID: 2100000, guid: bc7d3bdec82e4e24aba01f4fab17d552, type: 2}
+  - stage_color2: {fileID: 2100000, guid: 798dd0b0765ded74fb7589a339d09504, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

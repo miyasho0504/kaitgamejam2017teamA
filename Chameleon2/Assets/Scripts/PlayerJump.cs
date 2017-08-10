@@ -24,6 +24,9 @@ public class PlayerJump : MonoBehaviour {
 
     public GameObject _prefab_sonicboom;
 
+    public Material stage_color1;
+    public Material stage_color2;
+
 	// Use this for initialization
 	void Start () {
         _audio = this.GetComponent<AudioSource>();
@@ -89,11 +92,28 @@ public class PlayerJump : MonoBehaviour {
             if(first_jump==true&&second_jump==true){
                 GameObject _particle_object2 = Instantiate(_particle_iwa, _particle_create_position.transform);
                 ParticleSystem _particle2 = _particle_object.GetComponent<ParticleSystem>();
+                if (PlayerColorChange2.player_color == 1)
+                {
+                    _particle_object2.GetComponent<Renderer>().material = stage_color1;
+                }
+                else
+                {
+                    _particle_object2.GetComponent<Renderer>().material = stage_color2;
+                }
                 _particle2.Play();
+                
             }else if (first_jump == true && second_jump == false)
             {
                 GameObject _particle_object3 = Instantiate(_particle_iwa_small, _particle_create_position.transform);
                 ParticleSystem _particle3 = _particle_object.GetComponent<ParticleSystem>();
+                if (PlayerColorChange2.player_color == 1)
+                {
+                    _particle_object3.GetComponent<Renderer>().material = stage_color1;
+                }
+                else
+                {
+                    _particle_object3.GetComponent<Renderer>().material = stage_color2;
+                }
                 _particle3.Play();
             }
 
