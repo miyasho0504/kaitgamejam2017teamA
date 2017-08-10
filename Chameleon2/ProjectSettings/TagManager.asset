@@ -10,6 +10,7 @@ TagManager:
   - Stage0
   - About
   - Jump
+  - SpeedUpItem
   layers:
   - Default
   - TransparentFX
