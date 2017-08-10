@@ -1801,8 +1801,8 @@ MonoBehaviour:
   _particle_create_position: {fileID: 1901322249}
   _prefab_sonicboom: {fileID: 1552785234162440, guid: 36a5d66f5fe5c53488211ae140705ed6,
     type: 2}
-  stage_color1: {fileID: 0}
-  stage_color2: {fileID: 0}
+  stage_color1: {fileID: 2100000, guid: bc7d3bdec82e4e24aba01f4fab17d552, type: 2}
+  stage_color2: {fileID: 2100000, guid: 798dd0b0765ded74fb7589a339d09504, type: 2}
 --- !u!114 &1022401942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,6 +1817,13 @@ MonoBehaviour:
   player_speed: 50
   _run_audio: {fileID: 1945018758}
   _particle_kemuri: {fileID: 1917349546}
+  _particle_create_position: {fileID: 1901322249}
+  _prefab_sonicboom_item1: {fileID: 1005864643132250, guid: c3ecc11fbab79e148ae142718e47e77b,
+    type: 2}
+  _prefab_sonicboom_item2: {fileID: 1005864643132250, guid: 2d52fb29825703349b881ed2f5ed7a4b,
+    type: 2}
+  _prefab_sonicboom_item3: {fileID: 1005864643132250, guid: 04ed2327862c5cb45b1fe483a80f5184,
+    type: 2}
 --- !u!82 &1022401943
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4111,6 +4118,10 @@ MonoBehaviour:
   player_speed: 50
   _run_audio: {fileID: 0}
   _particle_kemuri: {fileID: 0}
+  _particle_create_position: {fileID: 0}
+  _prefab_sonicboom_item1: {fileID: 0}
+  _prefab_sonicboom_item2: {fileID: 0}
+  _prefab_sonicboom_item3: {fileID: 0}
 --- !u!54 &2096434829
 Rigidbody:
   m_ObjectHideFlags: 0
