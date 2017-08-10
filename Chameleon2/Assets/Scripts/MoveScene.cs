@@ -29,4 +29,7 @@ public class MoveScene : MonoBehaviour {
 	public void SceneManagementSelect(){
 		SceneManager.LoadScene ("Select");
 	}
+	public void SceneManagmentStageSa(){
+		SceneManager.LoadScene ("StageSa");
+	}
 }
