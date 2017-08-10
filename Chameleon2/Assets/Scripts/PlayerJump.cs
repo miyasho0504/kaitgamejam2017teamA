@@ -22,6 +22,8 @@ public class PlayerJump : MonoBehaviour {
     public GameObject _particle_iwa;
     public GameObject _particle_create_position;
 
+    public GameObject _prefab_sonicboom;
+
 	// Use this for initialization
 	void Start () {
         _audio = this.GetComponent<AudioSource>();
@@ -29,45 +31,50 @@ public class PlayerJump : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (first_jump == false)
+        if (PlayerRestart2.player_failed == false)
         {
-            //マウスの左クリックがされたときの処理
-            if (Input.GetMouseButtonDown(0)==true||Input.GetKeyDown(KeyCode.Space)==true)
+            if (first_jump == false)
             {
-                this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().velocity.x, jump_power, 0);
-                _audio.PlayOneShot(se_jump1);
+                //マウスの左クリックがされたときの処理
+                if (Input.GetMouseButtonDown(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
+                {
+                    this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().velocity.x, jump_power, 0);
+                    _audio.PlayOneShot(se_jump1);
+                    Instantiate(_prefab_sonicboom, _particle_create_position.transform.position, Quaternion.Euler(-180, 0, 0));
+                }
+
+                //マウスの左クリックが押し続けられているときの処理
+                if (Input.GetMouseButton(0) == true || Input.GetKey(KeyCode.Space) == true)
+                {
+                    Physics.gravity = new Vector3(0, jump_continue_gravity, 0);
+                }
+                //マウスの左クリックが離されたときの処理
+                if (Input.GetMouseButtonUp(0) == true || Input.GetKeyUp(KeyCode.Space) == true)
+                {
+                    Physics.gravity = new Vector3(0, original_gravity, 0);
+                    first_jump = true;
+                }
             }
-            
-            //マウスの左クリックが押し続けられているときの処理
-            if (Input.GetMouseButton(0) == true || Input.GetKey(KeyCode.Space) == true)
+            else if (second_jump == false)
             {
-                Physics.gravity = new Vector3(0,jump_continue_gravity,0);
-            }
-            //マウスの左クリックが離されたときの処理
-            if (Input.GetMouseButtonUp(0) == true || Input.GetKeyUp(KeyCode.Space) == true)
-            {
-                Physics.gravity = new Vector3(0,original_gravity, 0);
-                first_jump = true;
-            }
-        }
-        else if (second_jump == false)
-        {
-            //マウスの左クリックがされたときの処理
-            if (Input.GetMouseButtonDown(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
-            {
-                this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().velocity.x, jump_power, 0);
-                _audio.PlayOneShot(se_jump2);
-            }
-            //マウスの左クリックが押し続けられているときの処理
-            if (Input.GetMouseButton(0) == true || Input.GetKey(KeyCode.Space) == true)
-            {
-                Physics.gravity = new Vector3(0, jump_continue_gravity, 0);
-            }
-            //マウスの左クリックが離されたときの処理
-            if (Input.GetMouseButtonUp(0) == true || Input.GetKeyUp(KeyCode.Space) == true)
-            {
-                Physics.gravity = new Vector3(0, original_gravity, 0);
-                second_jump = true;
+                //マウスの左クリックがされたときの処理
+                if (Input.GetMouseButtonDown(0) == true || Input.GetKeyDown(KeyCode.Space) == true)
+                {
+                    this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().velocity.x, jump_power, 0);
+                    _audio.PlayOneShot(se_jump2);
+                    Instantiate(_prefab_sonicboom, _particle_create_position.transform.position, Quaternion.Euler(-180, 0, 0));
+                }
+                //マウスの左クリックが押し続けられているときの処理
+                if (Input.GetMouseButton(0) == true || Input.GetKey(KeyCode.Space) == true)
+                {
+                    Physics.gravity = new Vector3(0, jump_continue_gravity, 0);
+                }
+                //マウスの左クリックが離されたときの処理
+                if (Input.GetMouseButtonUp(0) == true || Input.GetKeyUp(KeyCode.Space) == true)
+                {
+                    Physics.gravity = new Vector3(0, original_gravity, 0);
+                    second_jump = true;
+                }
             }
         }
 	}
