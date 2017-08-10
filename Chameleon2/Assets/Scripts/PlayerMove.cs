@@ -14,6 +14,9 @@ public class PlayerMove : MonoBehaviour {
     public GameObject _particle_kemuri;
     ParticleSystem _kemuri_system;
 
+    bool state_speedup = false;
+    float speedup_timer=0.0f;
+
     // Use this for initialization
 	void Start () {
         _audio = _run_audio.GetComponent<AudioSource>();
@@ -49,5 +52,25 @@ public class PlayerMove : MonoBehaviour {
         if(_audio.isPlaying==false&&PlayerJump.first_jump==false){
             _audio.PlayDelayed(0.2f);
         }
+
+        //スピードアップ処理
+        if(state_speedup==true){
+            player_speed = 100;
+            speedup_timer+=Time.deltaTime;
+            Debug.Log("speed_timer="+speedup_timer);
+            if(speedup_timer>5.0f){
+                player_speed = player_speed2;
+                state_speedup = false;
+                speedup_timer = 0;
+            }
+        }
 	}
+    void OnCollisionEnter(Collision collision)
+    {
+        if (state_speedup==false&&collision.gameObject.tag == "SpeedUpItem")
+        {
+            Debug.Log("speedup");
+            state_speedup = true;
+        }
+    }
 }
