@@ -44,6 +44,7 @@ public class PlayerRestart2 : MonoBehaviour {
                 }
                 else if (warp_played == false)
                 {
+                    TimeKeisoku.time_reset();
                     warp_played = true;
                     _audio.PlayOneShot(se_warp);
                     this.gameObject.transform.position = RestartPosition.transform.position;
