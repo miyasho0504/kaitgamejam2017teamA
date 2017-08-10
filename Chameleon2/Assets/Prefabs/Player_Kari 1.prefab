@@ -181,7 +181,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -206,6 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_speed: 50
+  _run_audio: {fileID: 0}
+  _particle_kemuri: {fileID: 0}
 --- !u!114 &114095078031132386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,6 +225,13 @@ MonoBehaviour:
   se_jump1: {fileID: 8300000, guid: 70c79a9e5a9252a489d545d0c5d2a225, type: 3}
   se_jump2: {fileID: 8300000, guid: b3496ab09f590eb499116bef33007506, type: 3}
   se_landing: {fileID: 8300000, guid: 9e227505ef6219f49b52802c0e73effa, type: 3}
+  _particle_tyakuti: {fileID: 0}
+  _particle_iwa_small: {fileID: 0}
+  _particle_iwa: {fileID: 0}
+  _particle_create_position: {fileID: 0}
+  _prefab_sonicboom: {fileID: 0}
+  stage_color1: {fileID: 0}
+  stage_color2: {fileID: 0}
 --- !u!114 &114300227074549926
 MonoBehaviour:
   m_ObjectHideFlags: 1
