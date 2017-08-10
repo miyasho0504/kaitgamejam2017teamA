@@ -18,7 +18,7 @@ public class MoveScene : MonoBehaviour {
 		SceneManager.LoadScene("Tutorial");
 	}
 	public void SceneManagmentMain(){
-		SceneManager.LoadScene("Main");
+		SceneManager.LoadScene("StageMi");
 	}
 	static public void SceneManagmentResult(){
 		SceneManager.LoadScene("Result");
