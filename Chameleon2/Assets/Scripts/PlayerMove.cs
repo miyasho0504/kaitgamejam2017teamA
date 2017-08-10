@@ -84,12 +84,13 @@ public class PlayerMove : MonoBehaviour {
 	}
     void OnCollisionEnter(Collision collision)
     {
-        if (state_speedup==false&&collision.gameObject.tag == "SpeedUpItem")
+        if (collision.gameObject.tag == "SpeedUpItem")
         {
             collision.gameObject.GetComponent<SpeedUpItem>().play_se();
             player_speed=collision.gameObject.GetComponent<SpeedUpItem>().speed_;
             Debug.Log("speedup");
             state_speedup = true;
+            speedup_timer = 0;
             Vector3 pos=_particle_create_position.transform.position;
             pos.x += 10;
             Instantiate(_prefab_sonicboom_item1,pos, Quaternion.Euler(0, 90, 0));
