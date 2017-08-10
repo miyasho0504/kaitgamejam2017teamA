@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 4900e7f393d668b418bc8605d3981e09
-timeCreated: 1502176024
+timeCreated: 1502331869
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - stage0_material: {fileID: 2100000, guid: 06d3ccfde9bba2c40b9118fa38f72853, type: 2}
+  - stage1_material: {fileID: 2100000, guid: bc7d3bdec82e4e24aba01f4fab17d552, type: 2}
+  - stage2_material: {fileID: 2100000, guid: 798dd0b0765ded74fb7589a339d09504, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
